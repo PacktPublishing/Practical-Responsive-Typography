@@ -1,0 +1,45 @@
+/* Scss Document */
+$breakpoints: (
+  small : 480px,
+  medium: 700px,
+  large : 1024px
+);
+
+$p-font: (
+  null  : (15px, 1.3),
+  small : 16px,
+  medium: (17px, 1.4),
+  large : (19px, 1.45),
+);
+
+@mixin font($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-font in $fs-map {
+    @if $fs-breakpoint == null {
+      @include make-font-size($fs-font);
+    }
+    @else {
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        @include make-font-size($fs-font);
+      }
+    }
+  }
+}
+
+@mixin make-font-size($fs-font) {
+  @if type-of($fs-font) == "list" {
+    font-size: nth($fs-font, 1);
+    @if (length($fs-font) > 1) {
+      line-height: nth($fs-font, 2);
+    }
+  }
+  @else {
+    font-size: $fs-font;
+  }
+}
+
+p {
+  @include font($p-font);
+}

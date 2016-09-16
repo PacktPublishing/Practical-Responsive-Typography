@@ -35,6 +35,11 @@ p {  font-family: �Georgia�, "Times New Roman", Times, serif;
 
 
 ```
+##What you need for this book
+You only need a code editor, Koala or any Sass-processing software, and a web browser.
 
+##Related Typography Books
 
+* [Professional CSS3](https://www.packtpub.com/web-development/professional-css3?utm_source=github&utm_medium=repository&utm_campaign=9781785880940)
+* [HTML5 and CSS3 Responsive Web Design Cookbook](https://www.packtpub.com/web-development/html5-and-css3-responsive-web-design-cookbook?utm_source=github&utm_medium=repository&utm_campaign=9781849695442)
 
